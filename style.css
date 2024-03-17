@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #2f363e;
+}
+
+.menu {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  position: absolute;
+  left: 0;
+  list-style: none;
+  transition: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+  transform-origin: 140px;
+  transform: rotate(0deg) translateX(110px);
+}
+
+.menu.active li {
+  transform: rotate(calc(360deg / 8 * var(--i))) translate(0px);
+}
+
+.menu li:hover {
+  transform: rotate(calc(360deg / 8 * var(--i))) translate(0px);
+}
+.menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  border: 2px solid var(--clr);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.5em;
+  transform: rotate(calc(360deg / -8 * var(--i)));
+}
+
+.menu .toggle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #2f363e;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 2em;
+  transition: transform 1.25s;
+}
+
+.menu.active .toggle {
+  transform: rotate(315deg);
+}
+
+/* Images CSS */
+
+/* .images img {
+  filter: saturate(0%);
+  width: 10%;
+  border: 2px solid whitesmoke;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+.images img:hover {
+  filter: saturate(100%);
+  width: 100%;
+} */
